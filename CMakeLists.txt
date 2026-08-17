@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(HazelWrkspc)
 
+include(CTest)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -20,5 +22,9 @@ add_subdirectory(Hazel/vendor/Glad)
 add_subdirectory(Hazel/vendor/imgui)
 add_subdirectory(Hazel)
 add_subdirectory(Sandbox)
+
+if(BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Sandbox)

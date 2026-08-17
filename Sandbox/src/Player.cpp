@@ -30,18 +30,19 @@ Player::Player()
 
 void Player::LoadAssets()
 {
-	m_ShipTexture = Texture2D::Create(std::string(ASSET_PATH) + "/textures/Ship.png");
+	m_ShipTexture = Texture2D::Create("Resources/textures/Ship.png");
 }
 
 void Player::OnUpdate(Hazel::Timestep ts)
 {
-	m_Time += ts;
+	const float deltaTime = static_cast<float>(ts);
+	m_Time += deltaTime;
 
 	if (Input::IsKeyPressed(HZ_KEY_SPACE))
 	{
-		m_Velocity.y += m_EnginePower;
+		m_Velocity.y += m_EngineAcceleration * deltaTime;
 		if (m_Velocity.y < 0.0f)
-			m_Velocity.y += m_EnginePower * 2.0f;
+			m_Velocity.y += m_EngineAcceleration * deltaTime;
 		
 		glm::vec2 emissionPoint = { 0.0f, -0.6f };
 		float rotation = glm::radians(GetRotation());
@@ -50,12 +51,11 @@ void Player::OnUpdate(Hazel::Timestep ts)
 		m_EngineParticle.Velocity.y = -m_Velocity.y * 0.2f - 0.2f;
 		m_ParticleSystem.Emit(m_EngineParticle);
 	}
-	else {
-		m_Velocity.y -= m_Gravity;
-	}
+	else
+		m_Velocity.y -= m_Gravity * deltaTime;
 	
 	m_Velocity.y = glm::clamp(m_Velocity.y, -20.0f, 20.0f);
-	m_Position += m_Velocity * (float)ts;
+	m_Position += m_Velocity * deltaTime;
 
 	if (m_Time > m_SmokeNextEmitTime)
 	{
@@ -80,4 +80,6 @@ void Player::Reset()
 {
 	m_Position = { -10.0f, 0.0f };
 	m_Velocity = { 5.0f, 0.0f };
+	m_Time = 0.0f;
+	m_SmokeNextEmitTime = m_SmokeEmitInterval;
 }

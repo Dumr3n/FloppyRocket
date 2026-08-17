@@ -23,13 +23,12 @@ private:
 private:
 	Hazel::Scope<Hazel::OrthographicCamera> m_Camera;
 	Level m_Level;
-	ImFont* m_Font;
+	ImFont* m_Font = nullptr;
 	float m_Time = 0.0f;
-	bool m_Blink = false;
 	enum class GameState
 	{
-		Play = 0, Mainmenu = 1, GameOver = 2
+		Playing = 0, MainMenu = 1, GameOver = 2
 	};
 
-	GameState m_State = GameState::Mainmenu;
+	GameState m_State = GameState::MainMenu;
 };

@@ -4,8 +4,7 @@
 
 namespace Hazel {
 
-	class RenderCommand
-	{
+	class RenderCommand {
 	public:
 		inline static void Init()
 		{

@@ -14,8 +14,7 @@
 namespace Hazel {
 	class ImGuiLayer;
 
-	class Application
-	{
+	class Application {
 	public:
 		Application();
 		virtual ~Application();
@@ -28,9 +27,15 @@ namespace Hazel {
 		void PushOverlay(Layer* layer);
 
 		
-		inline Window& GetWindow() { return *m_Window; }
+		inline Window& GetWindow() 
+		{ 
+			return *m_Window; 
+		}
 
-		static inline Application& Get() { return *s_Instance; }
+		static inline Application& Get() 
+		{ 
+			return *s_Instance; 
+		}
 
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);

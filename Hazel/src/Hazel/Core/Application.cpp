@@ -69,11 +69,11 @@ namespace Hazel {
 		}
 	}
 
-	void Application::Run() {
+	void Application::Run() 
+	{
 		HZ_PROFILE_FUNCTION();
 
-		while (m_Running)
-		{
+		while (m_Running) {
 			HZ_PROFILE_SCOPE("RunLoop");
 
 			float time = (float)glfwGetTime(); //Platform::GetTime
@@ -81,8 +81,7 @@ namespace Hazel {
 			m_LastFrameTime = time;
 
 
-			if (!m_Minimized)
-			{
+			if (!m_Minimized) {
 				{
 					HZ_PROFILE_SCOPE("LayerStack OnUpdate");
 					for (Layer* layer : m_LayerStack)
@@ -113,8 +112,7 @@ namespace Hazel {
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
 		HZ_PROFILE_FUNCTION();
-		if (e.GetWidth() == 0 || e.GetHeight() == 0)
-		{
+		if (e.GetWidth() == 0 || e.GetHeight() == 0) {
 			m_Minimized = true;
 			return false;
 		}

@@ -6,8 +6,7 @@
 
 namespace Hazel {
 
-	class Renderer2D
-	{
+	class Renderer2D {
 	public:
 		static void Init();
 		static void Shutdown();

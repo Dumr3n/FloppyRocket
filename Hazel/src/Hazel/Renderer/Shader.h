@@ -5,8 +5,7 @@
 #include <glm/glm.hpp>
 
 namespace Hazel {
-	class Shader
-	{
+	class Shader {
 	public:
 		virtual ~Shader() = default;
 
@@ -25,8 +24,7 @@ namespace Hazel {
 		static Ref<Shader> Create(const std::string& name, const std::string& vertexSrc, std::string& fragmentSrc);
 	};
 
-	class ShaderLibrary
-	{
+	class ShaderLibrary {
 	public:
 		void Add(const Ref<Shader>& shader);
 		void Add(const std::string& name, const Ref<Shader>& shader);

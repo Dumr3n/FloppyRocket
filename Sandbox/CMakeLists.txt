@@ -33,3 +33,10 @@ set_target_properties(Sandbox PROPERTIES
 target_compile_definitions(Sandbox PRIVATE
     ASSET_PATH="${CMAKE_SOURCE_DIR}/Sandbox/assets"
 )
+
+add_custom_command(TARGET Sandbox POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_CURRENT_SOURCE_DIR}/assets"
+        "$<TARGET_FILE_DIR:Sandbox>/Resources"
+    COMMENT "Copying Sandbox assets"
+)

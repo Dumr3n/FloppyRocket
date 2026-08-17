@@ -47,7 +47,7 @@ void ParticleSystem::OnUpdate(Hazel::Timestep ts)
 
 		particle.LifeRemaining -= ts;
 		particle.Position += particle.Velocity * (float)ts;
-		particle.Rotation += 0.01f * ts;
+		particle.Rotation += 0.5f * static_cast<float>(ts);
 	}
 }
 
@@ -59,7 +59,7 @@ void ParticleSystem::OnRender()
 			continue;
 
 		float life = particle.LifeRemaining / particle.LifeTime;
-		glm::vec4 color = glm::lerp(particle.ColorBegin, particle.ColorBegin, life);
+		glm::vec4 color = glm::lerp(particle.ColorEnd, particle.ColorBegin, life);
 		color.a = color.a * life;
 
 		float size = glm::lerp(particle.SizeEnd, particle.SizeBegin, life);

@@ -42,6 +42,5 @@ private:
 	glm::vec3 m_PillarHSV = {0.0f, 0.8f, 0.8f};
 
 	std::vector<Pillar> m_Pillars;
-	std::vector<glm::vec2> m_Points;
 	Hazel::Ref<Hazel::Texture2D> m_TriangleTexture;
 };

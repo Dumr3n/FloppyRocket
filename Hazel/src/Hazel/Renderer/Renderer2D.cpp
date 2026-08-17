@@ -9,8 +9,7 @@
 
 namespace Hazel {
 
-	struct Renderer2DStorage
-	{
+	struct Renderer2DStorage {
 		Ref<VertexArray> QuadVertexArray;
 		Ref<Shader> TextureShader;
 		Ref<Texture2D> WhiteTexture;
@@ -53,7 +52,7 @@ namespace Hazel {
 		uint32_t whiteTextureData = 0xffffffff;
 		s_Data->WhiteTexture->SetData(&whiteTextureData, sizeof(uint32_t));
 
-		s_Data->TextureShader = Shader::Create(std::string(ASSET_PATH) + "/shaders/Texture.glsl");
+		s_Data->TextureShader = Shader::Create("Resources/shaders/Texture.glsl");
 		s_Data->TextureShader->Bind();
 		s_Data->TextureShader->SetInt("u_Texture", 0);
 

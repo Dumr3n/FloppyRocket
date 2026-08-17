@@ -16,20 +16,17 @@
 
 #include <thread>
 namespace Hazel {
-    struct ProfileResult
-    {
+    struct ProfileResult {
         std::string Name;
         long long Start, End;
         uint32_t ThreadID;
     };
 
-    struct InstrumentationSession
-    {
+    struct InstrumentationSession {
         std::string Name;
     };
 
-    class Instrumentor
-    {
+    class Instrumentor {
     private:
         InstrumentationSession* m_CurrentSession;
         std::ofstream m_OutputStream;
@@ -58,8 +55,9 @@ namespace Hazel {
 
         void WriteProfile(const ProfileResult& result)
         {
-            if (m_ProfileCount++ > 0)
+            if (m_ProfileCount++ > 0) {
                 m_OutputStream << ",";
+            }
 
             std::string name = result.Name;
             std::replace(name.begin(), name.end(), '"', '\'');
@@ -96,8 +94,7 @@ namespace Hazel {
         }
     };
 
-    class InstrumentationTimer
-    {
+    class InstrumentationTimer {
     public:
         InstrumentationTimer(const char* name)
             : m_Name(name), m_Stopped(false)
@@ -107,8 +104,9 @@ namespace Hazel {
 
         ~InstrumentationTimer()
         {
-            if (!m_Stopped)
+            if (!m_Stopped) {
                 Stop();
+            }
         }
 
         void Stop()

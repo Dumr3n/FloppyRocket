@@ -7,8 +7,7 @@
 
 namespace Hazel {
 
-	struct WindowProps
-	{
+	struct WindowProps {
 		std::string Title;
 		unsigned int Width;
 		unsigned int Height;
@@ -22,12 +21,13 @@ namespace Hazel {
 	};
 
 	// Interface representing a desktop system based Window
-	class HAZEL_API Window
-	{
+	class HAZEL_API Window {
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 
-		virtual ~Window() {}
+		virtual ~Window() 
+		{
+		}
 
 		virtual void OnUpdate() = 0;
 
