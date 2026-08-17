@@ -3,7 +3,7 @@
 An arcade flying game built in modern C++ with the Hazel engine. Guide a tiny rocket through an endless field of shifting obstacles, manage its momentum with short thruster bursts, and chase a higher score on every run.
 
 <p align="center">
-  <img width="900" alt="Floppy Rocket gameplay" src="https://github.com/user-attachments/assets/4a5565ad-5019-43ef-b504-ff303c3f4d66" />
+  <img width="900" alt="Floppy Rocket gameplay" src="https://github.com/user-attachments/assets/7bed4d75-1b92-4de9-80d2-084e6dd02267" />
 </p>
 
 ## Highlights
@@ -67,8 +67,8 @@ FloppyRocket/
 ## Screenshots
 
 <p align="center">
-  <img width="49%" alt="Floppy Rocket obstacle course" src="https://github.com/user-attachments/assets/820aaf07-e4f2-4052-b2fe-d94ea146ac42" />
-  <img width="49%" alt="Floppy Rocket gameplay" src="https://github.com/user-attachments/assets/4a5565ad-5019-43ef-b504-ff303c3f4d66" />
+  <img width="49%" alt="Floppy Rocket obstacle course" src="https://github.com/user-attachments/assets/60894562-6e78-4fd6-87e3-d504b75eb394" />
+  <img width="49%" alt="Floppy Rocket gameplay" src="https://github.com/user-attachments/assets/aa4919ee-fd53-4d67-91dc-d59fefdf01fc" />
 </p>
 
 ## Acknowledgements
